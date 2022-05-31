@@ -1,0 +1,333 @@
+$default_color:#ffffff;
+$background-gray: #f1f1f2;
+$color-red:#e4002b;
+$color-green:#2a9446;
+$color-gray-1:#bebebe;
+$color-gray-2:#9ca7b0;
+$color-gray-3:#998585;
+$color-gray-4:#7b8285;
+$color-gray-border-1:#e6e6e6;
+$color-gray-border-2:#998585;
+
+html{
+    font-size: 100%;
+}
+
+@font-face {
+    font-family: AssociateSansLight;
+    src: url('../fonts/AssociateSansLight.otf');
+} 
+
+body {
+  font-family: AssociateSansLight;
+  margin: 0;
+}
+
+.button {
+    border: 1px solid $color-red;
+    width: 8rem;
+    height: 2.5rem;
+}
+
+.button--type-know_more {
+    background-color: $default_color;
+    color: $color-red;
+    font-weight: 800;
+}
+
+.button--type-send {
+    background-color: $color-red;
+    color: $default_color;
+}
+
+/*
+** Begin Classes for Title Messages
+*/
+.alert{
+    display: flex;
+    border: 1px solid $color-gray-border-2;
+    height: 2.5rem;
+    background-color: $default_color;
+    align-items: center;
+
+    .alert__icon{
+        flex: 0.5rem;
+        height: 2.5rem;
+        margin: 0;
+    }
+
+    .alert__icon__success{
+        background-color: $color-green;
+        svg{
+            margin-top: 0.7rem;
+        }
+        
+    }
+
+    .alert__icon__error{
+        background-color: $color-red;
+        svg{
+            margin-top: 0.5rem;
+        }
+    }
+
+    .alert__close{
+        height: 2.5rem;
+        flex: 0.5rem;
+        border: none;
+        background-color: $default_color;
+        font-size: 1.2em;
+        font-family: cursive;
+    }
+
+    .alert__response{
+        height: 2.5rem;
+        flex:60%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        font-size: 0.9em;
+    }
+}
+
+/*
+** End Classes for Title Messages
+*/
+
+.header{
+    text-align: center;
+    margin: 0.5rem 0;
+    svg{
+        g{
+            g{
+                fill: $color-red;
+            }
+        }
+        
+    }
+}
+
+.nav{
+    background-image:url(../pattern/pattern_bg.png);
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+
+    .banner{
+        display: flex;
+        flex-direction: column;
+        color: $default_color;
+        text-align: center;
+        column-gap: 2rem;
+        padding : 2rem 0;
+        width: 1000px;
+
+        h2{
+            margin: 0;
+        }
+
+        .banner__title{
+            font-size: 1.2em;
+        }
+        .banner__subtitle{
+            margin: 2rem 0;
+            p{
+                margin: 0;
+            }
+        }
+    }
+}
+
+.main{
+    background: $background-gray;
+    display: flex;
+    justify-content: center;
+}
+
+.row{
+    margin: 2rem 0;
+    width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mobile{
+    flex:30rem;
+    
+    .mobile__title{
+        margin-bottom: 1rem;
+        h2{
+            margin: 0;
+        }
+    }
+
+    .mobile__description{
+        color: $color-gray-3;
+        padding-right: 5rem;
+        margin-bottom: 2rem;
+    }
+    
+
+    .devices{
+        padding: 0;
+        .devices__item{
+            display: inline-block;
+            background-color: $color-red;
+            width: 2rem;
+            height: 2rem;
+            text-align: center;
+            .devices__icon{
+                padding: 0.2rem;
+            }
+        }
+    }
+}
+
+.section{
+    flex:18rem;
+    text-align: center;
+
+    .logging{
+
+        
+        .logging__title{
+            height: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+    
+        .logging__alert{
+            margin-bottom: 1rem;
+        }
+    
+        .form {
+            display: flex;
+            flex-direction: column;
+    
+            .form__input{
+                padding: 0 1rem;
+                height: 2.5rem;
+                margin-bottom: 1rem;
+                border:none;
+                color: $color-gray-4;
+            }
+            
+            .form__button{
+                align-self: end;
+                margin-top: 1rem;
+            }
+        }
+    }
+}
+
+footer{
+    text-align: center;
+    color: $color-gray-1;
+    background-color: $default_color;
+    position: fixed;
+    bottom: 0.5em;
+    right: 0;
+    left: 0;
+}
+
+@media screen and (min-width: 768px) and (max-width:1199px) {
+
+    .nav{
+        .banner{
+            width: 100%;
+            margin: 0 2rem;
+        }
+    }
+    
+
+    .row{
+        padding: 0 1rem;
+        margin: 0;
+    }
+
+    .mobile{
+        flex:50%;
+        margin-right: 3rem;
+        .mobile__title{margin: 1rem 0;}
+    
+        .mobile__description{
+            padding: 0;
+        }
+    }
+    .section{
+        flex: 280px;
+        .logging{
+            margin-bottom: 2rem;
+            .logging__title{
+                margin: 1rem 0;
+            }
+        
+            .form {
+                padding: 0;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:320px) and (max-width:767px){
+
+    
+    body {
+        margin: 0;
+    }
+
+    .nav{
+
+        .banner{
+            text-align: left;
+            flex-direction: column;
+            padding: 2rem 1rem;
+            width: 100%;
+        }
+
+        .banner__title{
+            font-size: 1.7rem;
+            margin: 0;
+        }
+
+        .banner__subtitle{
+            font-size: 0.9rem;
+            p{
+                margin: 1rem 0 2rem 0;
+            }
+        }
+    
+        .banner__know_more{
+            text-align: right; 
+        }
+    }
+
+    .main{
+        padding: 0 1rem;
+        .row{
+            .mobile{
+                border-bottom: 3px solid $color-gray-border-1;
+            
+                .mobile__description{
+                    padding: 0;
+                    font-size: 0.9rem;
+                }
+                
+                .devices{
+                    margin-bottom: 2rem;
+                }
+            }
+
+            .section{
+                .logging{
+                    margin-top: 2rem;
+                }
+            }
+        }
+    }
+
+    footer{
+        font-size: 0.9rem;
+        position: inherit;
+    }
+}
